@@ -1,7 +1,7 @@
 class Book {
     constructor (id, title, author, isbn, format, publisher, publishedYear, likes, reviews) {
         this.id = id 
-        this.title = title,
+        this.title = this.capitilize(title),
         this.author = author,
         this.isbn = isbn,
         this.format = format,
@@ -12,6 +12,15 @@ class Book {
         this.image = null
     }
 
+
+    capitilize (title) {
+        let words = title.split(/[?,.\s]+/);
+        const capitilizedWords = words.map((word, index) => {
+            if(word.length >= 3 || index == 0)
+                return word[0].toUpperCase() + word.slice(1);
+        })
+        return capitilizedWords.join(' ');
+    }
 
     getTableRowHeader() {
         let tableRowHeader = document.createElement("tr")
