@@ -66,7 +66,7 @@ function switchViews(view){
     document.getElementById('grid').classList.add('hidden');
 
     if (view === 'table') {
-        document.getElementById('table').classList.remove('hidden');
+        document.getElementById('table-box').classList.remove('hidden');
     } else {
         document.getElementById('grid').classList.remove('hidden');
     }
