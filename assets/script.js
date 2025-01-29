@@ -9,7 +9,8 @@ bookGenerator.generate()
 
 document.getElementById('form').addEventListener('change', (e) => {
     document.getElementById('faker-box').innerHTML = null;  
-    bookGenerator = new BookGenerator()  
+    bookGenerator = new BookGenerator()
+    db = {};  
     bookGenerator.generate();
 })
 
