@@ -50,10 +50,6 @@ document.getElementById('likes').addEventListener('input', (e) => {
     slider.innerText = e.target.value;
 }) 
 
-// document.getElementById('switch-views').addEventListener('click', () => {
-
-// })
-
 document.getElementById('table-button').addEventListener('click', () => {
     switchViews('table');
 })
@@ -69,6 +65,7 @@ function switchViews(view){
     if (view === 'table') {
         document.getElementById('table-box').classList.remove('hidden');
     } else {
+        populateGridView();
         document.getElementById('grid').classList.remove('hidden');
     }
 }
@@ -102,7 +99,6 @@ export function populateGridView() {
 document.getElementById('download').addEventListener('click', function () {
     const rows = Object.entries(db).map(([bookId, book]) => {
         const firstReview = book.reviews.length > 0 ? book.reviews[0] : {};
-
         return {
             id: book.id,
             title: book.title,

@@ -124,7 +124,6 @@ class BookGenerator {
             console.log(this.completedTasks, this.form.getQuantity())
             if(this.completedTasks == this.form.getQuantity()) {
                 this.unblockDownloadButton();
-                populateGridView();
                 this.unblockGridButton();
             }
         };
